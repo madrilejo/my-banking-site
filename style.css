@@ -71,7 +71,7 @@ header {
 /* ==========================================================================
    HERO DISPLAY BANNER (WITH CUSTOM BACKGROUND IMAGE)
    ========================================================================== */
-.promo-hero {
+.hero {
   /* 1. Point to your uploaded image file */
   background-image: url('hero-bg.jpg'); 
   

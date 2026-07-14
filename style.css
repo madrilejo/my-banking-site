@@ -34,6 +34,15 @@ header {
   align-items: center;
 }
 
+.section-image {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  /* Optional: gives the picture a subtle shadow matching the bank aesthetic */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
+}
+
 .logo {
   font-size: 24px;
   font-weight: 700;

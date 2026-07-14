@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (popup) {
       popup.classList.add("show-popup");
     }
-  }, 3000);
+  }, 100);
 
   // 2. Hide the popup immediately when clicking the close (X) button
   if (closeBtn && popup) {

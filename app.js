@@ -39,3 +39,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hand each element down directly to our intersection detector setup
   hiddenElements.forEach(element => observer.observe(element));
 });
+
+
+/**
+ * ==========================================================================
+ * MINI LANDING PROMO POPUP LOGIC
+ * ==========================================================================
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("promoPopup");
+  const closeBtn = document.getElementById("closePopupBtn");
+
+  // 1. Wait 3 seconds (3000ms) after load, then display the popup smoothly
+  setTimeout(() => {
+    if (popup) {
+      popup.classList.add("show-popup");
+    }
+  }, 3000);
+
+  // 2. Hide the popup immediately when clicking the close (X) button
+  if (closeBtn && popup) {
+    closeBtn.addEventListener("click", () => {
+      popup.classList.remove("show-popup");
+    });
+
+    // 3. Optional: Hide the popup if the user clicks anywhere on the dark overlay background
+    popup.addEventListener("click", (event) => {
+      if (event.target === popup) {
+        popup.classList.remove("show-popup");
+      }
+    });
+  }
+});

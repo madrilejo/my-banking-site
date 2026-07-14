@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open an Account - GrowthBank</title>
+  <!-- Link to your existing style.css so the navigation and base fonts match perfectly! -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Custom CSS specifically for this form page */
+    .form-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .form-header {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-header h1 {
+      color: #0f172a;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .form-header p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #334155;
+      background-color: #f8fafc;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    /* Highlighting field borders on click */
+    .form-group input:focus, .form-group select:focus {
+      border-color: #0052cc;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
+    }
+
+    /* Action Buttons */
+    .form-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #0052cc;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #003d99;
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98); /* Tiny physical press down effect */
+    }
+
+    .btn-cancel {
+      text-align: center;
+      text-decoration: none;
+      color: #64748b;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .btn-cancel:hover {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <!-- Clicking logo takes user back home -->
+      <a href="index.html" style="text-decoration: none;" class="logo">GrowthBank</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#" class="btn-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Form Area -->
+  <section class="form-section">
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Start Your Savings Journey</h1>
+        <p>Complete this simple secure application form in under 2 minutes.</p>
+      </div>
+
+      <form id="applyForm">
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Legal Name</label>
+          <input type="text" id="fullName" placeholder="e.g. Juan Dela Cruz" required>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+
+        <!-- Account Type Selector -->
+        <div class="form-group">
+          <label for="accountType">Account Type</label>
+          <select id="accountType" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="savings">Starter Savings Account (No minimum balance)</option>
+            <option value="checking">High-Yield Checking Account</option>
+            <option value="business">Premium Corporate Business Account</option>
+          </select>
+        </div>
+
+        <!-- Submit actions -->
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Submit Secure Application</button>
+          <a href="index.html" class="btn-cancel">Cancel & Go Back Home</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Simple script to handle success notification on form submission -->
+  <script>
+    document.getElementById('applyForm').addEventListener('submit', (event) => {
+      event.preventDefault(); // Stops page from reloading instantly
+      
+      const name = document.getElementById('fullName').value;
+      alert(`Thank you, ${name}! Your application has been simulated. Under normal conditions, this would encrypt and send your data to our secure server database.`);
+      
+      // Go back to main landing page after user clicks OK on alert
+      window.location.href = "index.html"; 
+    });
+  </script>
+
+</body>
+</html>

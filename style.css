@@ -359,3 +359,114 @@ header {
 .popup-action-btn:active {
   transform: scale(0.98);
 }
+
+/* ==========================================================================
+   FORCE OVERLAY AND CENTERED POPUP
+   ========================================================================== */
+.popup-overlay {
+  position: fixed !important; /* Forces it to stay relative to the screen, NOT the page content */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;    /* Takes up 100% of viewport width */
+  height: 100vh !important;   /* Takes up 100% of viewport height */
+  background-color: rgba(15, 23, 42, 0.75) !important; /* Dark slate semi-transparent mask */
+  
+  /* These flex properties FORCE the box directly into the middle of the screen */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 99999 !important;  /* Higher than everything else on the page */
+  
+  /* Default hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Active state triggered by JS */
+.popup-overlay.show-popup {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* The actual popup card container */
+.popup-box {
+  background: #ffffff !important;
+  width: 90% !important;
+  max-width: 420px !important; /* Keeps it compact and mini */
+  padding: 40px 30px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  position: relative !important;
+  text-align: center !important;
+  
+  /* Pop entry transition */
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pop active state */
+.popup-overlay.show-popup .popup-box {
+  transform: scale(1) !important;
+}
+
+/* Close 'X' Button */
+.popup-close-btn {
+  position: absolute !important;
+  top: 15px !important;
+  right: 20px !important;
+  background: none !important;
+  border: none !important;
+  font-size: 32px !important;
+  color: #94a3b8 !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+}
+
+.popup-close-btn:hover {
+  color: #0f172a !important;
+}
+
+/* Inside Content */
+.popup-tag {
+  display: inline-block !important;
+  background-color: #fee2e2 !important;
+  color: #ef4444 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  border-radius: 20px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 15px !important;
+}
+
+.popup-content h2 {
+  color: #0f172a !important;
+  font-size: 24px !important;
+  margin-bottom: 12px !important;
+  font-weight: 700 !important;
+}
+
+.popup-content p {
+  color: #475569 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 25px !important;
+}
+
+/* Call to Action Button */
+.popup-action-btn {
+  display: block !important;
+  background-color: #0052cc !important;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 14px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  transition: background-color 0.2s !important;
+}
+
+.popup-action-btn:hover {
+  background-color: #003d99 !important;
+}

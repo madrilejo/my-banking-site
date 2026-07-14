@@ -18,7 +18,7 @@ body {
    NAVIGATION ENGINE
    ========================================================================== */
 header {
-  background-color: #ffffff;
+  background-color: #a28015;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: sticky; /* Locks navbar to the top of screen as the user scrolls down */
   top: 0;

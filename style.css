@@ -196,3 +196,16 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Forces all three wrapper links to be treated identically by the grid */
+.grid-card-link {
+  text-decoration: none; /* Removes any default blue link underlines */
+  color: inherit;        /* Keeps your original text colors */
+  display: flex;         
+  width: 100%;           /* Forces each column to be exactly the same width */
+}
+
+/* Forces the white card inside to fill the entire height and width of its column */
+.grid-card-link .card {
+  width: 100%;
+  height: 100%;

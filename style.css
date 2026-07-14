@@ -36,7 +36,7 @@ header {
 
 .section-image {
   flex: 1;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   border-radius: 12px;
   /* Optional: gives the picture a subtle shadow matching the bank aesthetic */

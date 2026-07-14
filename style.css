@@ -221,3 +221,23 @@ header {
 .grid-card-link .card {
   width: 100%;
   height: 100%;
+
+/* ==========================================================================
+   PERFECT ASPECT-RATIO HERO BANNER
+   ========================================================================== */
+.hero {
+  background-image: url('hero-bg.jpg'); /* Ensure this matches your filename exactly */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* 1. Forces the box to match the exact mathematical shape of your 1920x900 image */
+  width: 100%;
+  aspect-ratio: 1920 / 900; 
+
+  /* 2. Removes the old vertical padding that was stretching and squishing the box */
+  padding: 0; 
+  
+  /* 3. Ensures the banner doesn't become too microscopic on tiny mobile screens */
+  min-height: 300px; 
+}

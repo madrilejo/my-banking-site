@@ -69,25 +69,29 @@ header {
 }
 
 /* ==========================================================================
-   HERO DISPLAY BANNER (WITH CUSTOM BACKGROUND IMAGE)
+   FULLY CONTAINERIZED, NON-CROPPING HERO BANNER
    ========================================================================== */
 .hero {
-  /* 1. Point to your uploaded image file */
-  background-image: url('hero-bg.jpg'); 
+  background-image: url('hero-bg.jpg'); /* Make sure this matches your file name */
   
-  /* 2. Scaler: Forces image to scale proportionally to fill the space without squishing */
-  background-size: cover; 
+  /* 1. THE SECRET: 'contain' forces the browser to scale the entire image down 
+     so that 100% of its width and height are always visible inside the box */
+  background-size: contain; 
   
-  /* 3. Alignment: Keeps the center of the image locked in the middle of the banner */
-  background-position: center; 
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #f8fafc; /* Matches your background color so empty space looks clean */
+
+  /* 2. Sets the exact mathematical proportion of a 1920x900 image */
+  width: 100%;
+  aspect-ratio: 1920 / 900; 
+
+  /* 3. Forces a minimum height so the banner remains large and visible on smaller screens */
+  min-height: 450px; 
   
-  /* 4. Fallback: If your image takes a second to load, show a nice dark blue color first */
-  background-color: #0a2540; 
-  
-  color: white;
-  padding: 100px 20px; /* Controls the overall height and padding of your banner */
-  text-align: center;
-  position: relative;
+  /* 4. Keeps padding clear so the layout doesn't distort */
+  padding: 0; 
+  margin: 0;
 }
 
 .hero-content {

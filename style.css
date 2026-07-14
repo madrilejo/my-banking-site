@@ -1,0 +1,189 @@
+/* ==========================================================================
+   GLOBAL STYLE RESET & ARCHITECTURE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding does not break item sizing calculations */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8fafc; /* Subtle off-white background */
+  color: #334155;            /* Deep slate gray text for optimal readability */
+  overflow-x: hidden;        /* Prevents horizontal layout breakage on small screens */
+}
+
+/* ==========================================================================
+   NAVIGATION ENGINE
+   ========================================================================== */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky; /* Locks navbar to the top of screen as the user scrolls down */
+  top: 0;
+  z-index: 100;    /* Guarantees the header stays stacked above all body items */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0052cc; /* Signature Banking Royal Blue */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.2s ease; /* Fluid color transitions on text hover */
+}
+
+.nav-links a:hover {
+  color: #0052cc;
+}
+
+.btn-login {
+  background-color: #0052cc;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   HERO DISPLAY BANNER
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, #0052cc 0%, #002244 100%); /* Deep rich banking gradient */
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   INTERACTIVE GRID MECHANICS (THE HOVER ACTION)
+   ========================================================================== */
+.features-container {
+  max-width: 1200px;
+  margin: -60px auto 60px auto; /* A negative margin draws the boxes vertically above the hero */
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Fully responsive automated columns */
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: pointer;
+  
+  /* 
+     THE HOVER EFFECT ENGINE: 
+     - "transform" enables the element's actual position shift.
+     - "box-shadow" handles the depth illumination changes.
+     - "cubic-bezier" acts like a virtual physics dampener (fast start, smooth floating peak deceleration).
+  */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.35s ease;
+}
+
+.card h3 {
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Fired immediately when user hovers their mouse pointer onto the element */
+.card:hover {
+  transform: translateY(-12px);          /* Moves card up along Y-axis exactly 12 pixels */
+  box-shadow: 0 20px 30px rgba(0, 82, 204, 0.15); /* Expands shadow outwards to simulate physical depth */
+}
+
+/* ==========================================================================
+   SCROLL-DRIVEN ANIMATION BASELINE ARCHITECTURE
+   ========================================================================== */
+.scroll-section {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Alternates structural position layout for even-numbered section items */
+.scroll-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.section-text {
+  flex: 1;
+}
+
+.section-text h2 {
+  font-size: 32px;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.section-image-placeholder {
+  flex: 1;
+  height: 300px;
+  background-color: #cbd5e1;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  font-weight: 600;
+}
+
+/*
+   SCROLL TRANSITION STATE 1: INITIAL PASSIVE STATE
+   The item starts entirely translucent and is physically offset 50px below where it should live.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/*
+   SCROLL TRANSITION STATE 2: ACTIVE ANIMATING STATE
+   Injected via JavaScript tracking engine. Brings item to solid visibility and structural alignment.
+*/
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

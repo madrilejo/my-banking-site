@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusive Promos - GrowthBank</title>
+  <!-- Link to your main stylesheet to keep navigation consistent -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Custom page styling for our catalog layout */
+    .promo-hero {
+      background: linear-gradient(135deg, #0052cc 0%, #0a2540 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .promo-hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .promo-hero p {
+      opacity: 0.8;
+      font-size: 16px;
+    }
+
+    /* Merch Grid Layout */
+    .catalog-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    /* Individual Promo/Merch Cards */
+    .promo-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      
+      /* Smooth transitions for lift-on-hover */
+      transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Container for the product/promo image */
+    .promo-image-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background-color: #f1f5f9;
+      position: relative;
+    }
+
+    .promo-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image fills the space without stretching */
+      transition: transform 0.5s ease;
+    }
+
+    /* Zoom in slightly on the image when hovering over card */
+    .promo-card:hover .promo-image {
+      transform: scale(1.05);
+    }
+
+    /* Category Badge overlayed on card */
+    .promo-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #0052cc;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Card Text details */
+    .promo-details {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1; /* Pushes button block to the bottom of cards of unequal heights */
+    }
+
+    .promo-title {
+      font-size: 20px;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .promo-desc {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    /* Action button at bottom of card */
+    .btn-claim {
+      display: inline-block;
+      text-align: center;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-claim:hover {
+      background-color: #0052cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" style="text-decoration: none;" class="logo">GrowthBank</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="apply.html">Open Account</a>
+        <a href="#" class="btn-login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Hero -->
+  <section class="promo-hero">
+    <h1>Exclusive Cardholder Deals</h1>
+    <p>Unlock premium benefits, cash back rewards, and curated partner experiences.</p>
+  </section>
+
+  <!-- Merch / Catalog List -->
+  <main class="catalog-container">
+    <div class="merch-grid">
+
+      <!-- Item 1: Cashback Promo -->
+      <div class="promo-card">
+        <div class="promo-image-wrapper">
+          <span class="promo-badge">Finance</span>
+          <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR19-FsR47HqRNq74CqmzkOMYupkGHQDT2Hvx3E6bwEOaJs6ZN1WgFqaSvOK08GEAHov4UMWUyRCqNEVRc" alt="Cashback icon" class="promo-image">
+        </div>
+        <div class="promo-details">
+          <h3 class="promo-title">5% Unlimited Cashback</h3>
+          <p class="promo-desc">Swipe your Platinum Card at any local grocery store, gas station, or drug store and automatically receive direct statement credits back.</p>
+          <a href="#" class="btn-claim" onclick="alert('Promo code ACTIVATED! Swipe with your Platinum Card.')">Claim Offer</a>
+        </div>
+      </div>
+
+      <!-- Item 2: Dining Discount -->
+      <div class="promo-card">
+        <div class="promo-image-wrapper">
+          <span class="promo-badge">Dining</span>
+          <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQivpa-aKoVG-8dG-dtFF2HBvaqybVsT1ZPE1hhK2RX4AbjdN9z2SDm0Kb6MPuuxXoVohNVVoEOndScUf4" alt="Dining food" class="promo-image">
+        </div>
+        <div class="promo-details">
+          <h3 class="promo-title">Up to 50% Off Partner Restaurants</h3>
+          <p class="promo-desc">Indulge in five-star local cuisines. Pay using your GrowthBank credit card on weekdays to slash up to half off your total dining bill.</p>
+          <a href="#" class="btn-claim" onclick="alert('Use code: GROWTHDINING50 during checkout.')">Get Promo Code</a>
+        </div>
+      </div>
+
+      <!-- Item 3: Travel Promo -->
+      <div class="promo-card">
+        <div class="promo-image-wrapper">
+          <span class="promo-badge">Travel</span>
+          <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQhMafg8qW_9uUblAGQTCvV2sF5S0hNUxJbnr_7AvYwy-ilBrCy9INEvRRdV29Zpyn1Gw5nInkmeuXunYc" alt="Passport and tickets" class="promo-image">
+        </div>
+        <div class="promo-details">
+          <h3 class="promo-title">Fly Anywhere on Installment</h3>
+          <p class="promo-desc">Book international flights and secure luxury stays with zero-interest, 6-month light installment schemes exclusively for travelers.</p>
+          <a href="#" class="btn-claim" onclick="alert('Redirecting to partner airlines landing booking system...')">Book Flights</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

@@ -38,7 +38,7 @@ header {
   flex: 1;
   max-width: 50%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   /* Optional: gives the picture a subtle shadow matching the bank aesthetic */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); 
 }
